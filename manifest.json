@@ -1,0 +1,32 @@
+{
+  "name": "Netflix Categories",
+  "description": "Accéder aux catégories détaillées de Netflix directement depuis le site",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["*://www.netflix.com/*"],
+      "js": ["scripts/config.js", "scripts/js/Browser.js", "scripts/js/Menu.js", "scripts/js/Title.js", "scripts/mainScript.js"],
+      "css": ["scripts/css/main.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "/popup/icons/logo-16x16.png",
+      "32": "/popup/icons/logo-32x32.png",
+      "48": "/popup/icons/logo-48x48.png",
+      "128": "/popup/icons/logo-128x128.png"
+    }
+  },
+  "icons": {
+    "16": "/popup/icons/logo-16x16.png",
+    "32": "/popup/icons/logo-32x32.png",
+    "48": "/popup/icons/logo-48x48.png",
+    "128": "/popup/icons/logo-128x128.png"
+  }
+}
