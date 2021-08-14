@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 100;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 300;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 400;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 700;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 800;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 900;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff) format('woff')
+}
+
+:root{
+	--background-dark: #141414;
+	--text-dark:  #fff;
+
+	--background-light: #fff;
+	--text-light: #000;
+
+	--netflix-color: #e50914;
+
+	--background: var(--background-dark);
+	--text: var(--text-dark);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Netflix Sans', sans-serif;
+    color: var(--text);
+}
+ul, li{
+    list-style-type: none;
+}
+
+body{
+	position: relative;
+	width: 34rem;
+	min-height: 34rem;
+	background: var(--background);
+    
+}
+body::before{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/4d477afb-f452-42fc-879f-8c97f5b66dbe/FR-fr-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-position: center;
+    background-size: cover;
+    opacity: .5;
+    z-index: -1;
+}
+
+header{
+	padding: 20px 30px;
+	background: linear-gradient(to bottom,rgba(0,0,0,1) 20%, rgba(0,0,0,0));
+}
+header > div:first-child{
+	margin-bottom: 24px;
+}
+header > div:first-child > h2{
+	font-size: 38px;
+    line-height: 38px;
+    font-weight: 700;
+}
+header > h3{
+    font-weight: 400;
+    line-height: normal;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+}
+
+main{
+	width: calc(100% - 52px);
+	min-height: 100vh;
+	margin: 14px auto;
+	padding: 24px;
+	background-color: rgba(0,0,0,.75);
+	border-radius: 4px;
+}
+main li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    padding: 8px 14px;
+    font-size: 15px;
+    line-height: normal;
+    margin: 12px 28px 0 0;
+    background: #000;
+}
+main li:hover{
+    background: #2c2c2c;
+}
+
+main li > div > span{
+    display: inline-block;
+}
+main li > div > span[contenteditable="true"]{
+    outline: none;
+    cursor: text;
+}
+main li > div > span[contenteditable="true"]:focus{
+    margin: 12px 0;
+}
+
+main li > div.draggable-zone{
+    height: 22px;
+    min-width: 68px;
+    flex-grow: 1;
+    cursor: move;
+}
+
+main > ul > li{
+    padding-right: 56px;
+}
+main > ul > li > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 82px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+main > ul > li > span.close > i:last-child{
+    display: none;
+}
+main > ul > li > span:not(.close) > i:first-child{
+    display: none;
+}
+
+main > ul > ul{
+    margin-bottom: 26px;
+}
+main > ul > ul.close{
+    display: none;
+}
+main > ul > ul > li{
+    margin-left: 28px;
+    background: rgba(0,0,0,.9);
+    border: solid 1px rgba(255,255,255,.15);
+    margin: 0;
+}
+main > ul > ul > li:not(:last-child){
+    border-bottom: none;
+}

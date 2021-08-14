@@ -6,14 +6,14 @@
   "content_scripts": [
     {
       "matches": ["*://www.netflix.com/*"],
-      "js": ["scripts/config.js", "scripts/js/Browser.js", "scripts/js/Menu.js", "scripts/js/Title.js", "scripts/mainScript.js"],
+      "js": ["scripts/js/Browser.js", "scripts/js/Menu.js", "scripts/js/Title.js", "scripts/mainScript.js"],
       "css": ["scripts/css/main.css"]
     }
   ],
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
