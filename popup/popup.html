@@ -6,17 +6,29 @@
     <link rel="stylesheet" href="popup.css">
   </head>
   <body>
+    <div id="background"></div>
     <header>
       <div>
         <h2>Catégories Netflix</h2>
+        <span id="options">
+          <i class="ri-settings-3-fill"></i>
+        </span>
       </div>
-      <h3>Organisez, ajoutez et supprimez vos catégories Netflix personnaisées</h3>
+      <h3>Vos catégories Netflix personnalisées appraissent directement sur la page Netflix.<br/>
+      Vous pouvez les organisez et en modifier, en ajoutez ou en supprimez ci-dessous : </h3>
     </header>
     <main>
       <ul></ul>
     </main>
     <footer>
+      <span id="info">Vous avez effectués des changements</span>
+      <div>
+        <button id="close">Fermer</button>
+        <button id="cancel">Annuler</button>
+        <button id="save">Sauvergarder</button>
+      </div>
     </footer>
+    <script src="js/Sortable.min.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

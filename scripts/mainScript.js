@@ -1,5 +1,10 @@
-chrome.storage.local.get(['categories'], ({categories}) => {
+chrome.storage.sync.get(null, (items) => {
 
+  categories = Object.values(items)
+  categories.sort((a, b) => {
+    return a.key - b.key
+  })
+  
   var href = window.location.href
 
   var browser = new Browser('.pinning-header > .pinning-header-container', 'Catégories', 'Extension')
@@ -54,7 +59,7 @@ chrome.storage.local.get(['categories'], ({categories}) => {
 	function main(){
 
 		if(window.location.pathname == '/browse'){
-			generateBrowserMenuTitle('Catégorie', null, null)
+			generateBrowserMenuTitle('Catégories', null, null)
 		}
 		else if(window.location.pathname.includes('/browse/genre')){
 			let code = window.location.pathname.split('/')[3]

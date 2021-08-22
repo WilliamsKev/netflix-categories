@@ -63,34 +63,44 @@
 ul, li{
     list-style-type: none;
 }
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
 body{
 	position: relative;
-	width: 34rem;
-	min-height: 34rem;
+	width: 44rem;
+    max-width: 100%;
+    overflow-x: hidden;
+	min-height: 44rem;
 	background: var(--background);
-    
 }
-body::before{
-	content: '';
-	display: block;
+body > #background{
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	position: fixed;
-	background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/4d477afb-f452-42fc-879f-8c97f5b66dbe/FR-fr-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg');
     background-position: center;
     background-size: cover;
     opacity: .5;
     z-index: -1;
 }
 
+/* HEADER */
+
 header{
+    width: 100%;
 	padding: 20px 30px;
 	background: linear-gradient(to bottom,rgba(0,0,0,1) 20%, rgba(0,0,0,0));
 }
 header > div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
 	margin-bottom: 24px;
 }
 header > div:first-child > h2{
@@ -98,6 +108,14 @@ header > div:first-child > h2{
     line-height: 38px;
     font-weight: 700;
 }
+header > div:first-child > span{
+    font-size: 38px;
+    line-height: 38px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
 header > h3{
     font-weight: 400;
     line-height: normal;
@@ -105,39 +123,67 @@ header > h3{
     text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
 }
 
+/* MAIN */
+
 main{
-	width: calc(100% - 52px);
+	width: calc(100% - 76px);
 	min-height: 100vh;
 	margin: 14px auto;
-	padding: 24px;
+	padding: 44px;
 	background-color: rgba(0,0,0,.75);
-	border-radius: 4px;
+	border-radius: 10px;
 }
 main li{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
     border: 1px solid white;
     padding: 8px 14px;
     font-size: 15px;
     line-height: normal;
-    margin: 12px 28px 0 0;
+    margin: 12px 0 0 0;
     background: #000;
+    margin-right: 16px;
 }
 main li:hover{
     background: #2c2c2c;
 }
 
-main li > div > span{
+main li > div{
     display: inline-block;
 }
-main li > div > span[contenteditable="true"]{
+main li > div[contenteditable="true"]{
     outline: none;
     cursor: text;
 }
-main li > div > span[contenteditable="true"]:focus{
+main li > div[contenteditable="true"]:focus{
     margin: 12px 0;
+}
+
+main li > p{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    right: -42px;
+    width: 32px;
+    cursor: pointer;
+}
+main li > p::before{
+    content: '';
+    display: block;
+    height: 59.6px;
+    border-right: 2px solid var(--netflix-color);
+    margin-right: 6px;
+}
+main li > p > i{
+    font-size: 18px;
+    color: var(--netflix-color);
+}
+main li > div[contenteditable="true"]:focus ~ p, main li p:active, main li p:focus{
+    display: flex;
 }
 
 main li > div.draggable-zone{
@@ -148,14 +194,17 @@ main li > div.draggable-zone{
 }
 
 main > ul > li{
-    padding-right: 56px;
+    padding-right: 38px;
+}
+main > ul > li:first-child{
+    margin-top: 0;
 }
 main > ul > li > span{
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 82px;
+    right: 0;
     font-size: 20px;
     width: 30px;
     height: 30px;
@@ -176,11 +225,56 @@ main > ul > ul.close{
     display: none;
 }
 main > ul > ul > li{
-    margin-left: 28px;
     background: rgba(0,0,0,.9);
     border: solid 1px rgba(255,255,255,.15);
-    margin: 0;
+    margin-top: 0;
 }
 main > ul > ul > li:not(:last-child){
     border-bottom: none;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--background);
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height .4s;
+}
+footer.show{
+    max-height: 100px;
+    pointer-events: auto;
+}
+
+footer > *{
+    margin: 18px 28px;
+}
+footer > span{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: start;
+}
+footer > div > button{
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+footer > div > button:not(:last-child){
+    color: var(--background);
+    padding: 8px 16px;
+    margin-right: 16px;
+}
+footer > div > button:last-child{
+    background: var(--netflix-color);
+    padding: 8px 24px;
 }
