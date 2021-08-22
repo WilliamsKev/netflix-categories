@@ -13,8 +13,13 @@ Par défaut à l'intallation, il existe 18 catégories principales possédant ch
 
 Depuis n'importe quel fenêtre Chrome, cliquez sur le boutton Extension _ en haut à droite puis sur l'icône de l'extension _. La pop-up qui apparaît permet de gérer les catégories.
 
-- *Ajouter une catégorie*
+### Ajouter une catégorie
+
 Pour ajouter une catégorie principale cliquer sur "Ajouter une catégorie" tout en bas de la pop-up. Pour ajouter une sous-catégorie développer sa catégorie parente en cliquant sur _ puis cliquer sur "Ajouter une sous-catégorie à la fin de la liste qui apparaît.
 Il faut alors ajouter le titre de la catégorie et son code Netflix (voici un lien vers la liste complète des codes, attention il y en a des milliers !).
 
-- *Supprimer une catégorie*
+### Modifier une catégorie
+
+### Déplacer une catégorie
+
+### Supprimer une catégorie
