@@ -35,7 +35,7 @@ Cliquer sur le nom ou le code puis sur le logo de suppression qui apparaît  en 
 
 ## Changer les paramètres
 
-Pour y accéder sur le logo en forme de roue crantée en haut à droite de la pop-up.
+Pour accéder à la page des options cliquer sur le logo en forme de roue crantée en haut à droite de la pop-up.
 
 Pour changer l'image de fond de la pop up, sélectionnez l'image de votre choix ou importez celle de votre choix (à condition de peser moins de 500 Ko)
 
