@@ -70,9 +70,13 @@ body{
 	min-height: 44rem;
 }
 
+a[downaload]{
+    display: none;
+}
+
 /* HEADER */
 
-header{
+body > header{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +87,7 @@ header{
     background-size: cover;
     position: relative;
 }
-header::before{
+body > header::before{
     content: '';
     display: block;
     position: absolute;
@@ -93,13 +97,13 @@ header::before{
     top: 0;
     background: linear-gradient(90deg,#000 18.06%,transparent 58.65%),rgba(0,0,0,.25)
 }
-header > *{
+body > header > *{
     position: relative;
 }
-header > div:nth-child(1){
+body > header > div:nth-child(1){
     margin-bottom: 24px;
 }
-header > div:nth-child(1) > h2{
+body > header > div:nth-child(1) > h2{
     font-size: 38px;
     line-height: 38px;
     font-weight: 800;
@@ -108,65 +112,124 @@ header > div:nth-child(1) > h2{
 
 /* MAIN */
 
-main > section{
+body > main > section{
     padding: 32px calc(50% - 604px);
 }
-main > section h3{
+body > main > section h3{
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 8px;
 }
-main > section p{
+body > main > section p{
     font-size: 17px;
     font-weight: 300;
     line-height: 28px;
     margin-bottom: 16px;
 }
 
-main > section > *{
+body > main > section > *{
     margin-right: 40px;
     margin-left: 40px;
 }
-
-main > section:nth-child(1){
-    background: #fafafa;
-    border-bottom: 1px solid #dedede;
-}
-main > section:nth-child(1) > div{
+body > main > section > div{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-left: 32px;
 }
-main > section:nth-child(1) > div a {
-    text-decoration: none;
-    margin: 0 8px 8px 8px;
-}
-main > section:nth-child(1) > div button{
+
+body > main > section > div button{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 16px;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 1px 16px rgb(0,0,0,.1);
-    border: none;
     outline: none;
 }
-main > section:nth-child(1) > div button:hover span{
-    color: var(--netflix-color);
-    text-decoration: underline;
-}
-main > section:nth-child(1) > div button i{
+body > main > section > div button i{
     font-size: 24px;
     margin-right: 16px;
 }
-main > section:nth-child(1) > div button span{
+body > main > section > div button span{
     font-size: 16px;
     font-weight: 700;
 }
 
-main > section:nth-child(2){
+body > main > section:nth-child(1){
+    background: #fafafa;
+    border-bottom: 1px solid #dedede;
+}
+body > main > section:nth-child(1) > div a {
+    text-decoration: none;
+    margin: 0 8px 8px 8px;
+}
 
+body > main > section:nth-child(1) > div button{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 1px 16px rgb(0,0,0,.1);
+    border: none;
+}
+
+body > main > section:nth-child(1) > div button:hover span{
+    color: var(--netflix-color);
+    text-decoration: underline;
+}
+
+body > main > section:nth-child(2) > div button{
+    background: #eaeae6;
+    padding: 16px;
+    border:  1px solid #d5d4d1;
+    margin: 0 8px 8px 8px;
+}
+
+/* IMPORTER */
+.wrapper-importer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+.wrapper-importer.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.container-importer{
+    box-shadow: 0 0 16px rgba(0,0,0,.12), 0 16px 16px rgba(0,0,0,.24);
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.container-importer > main > section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+}
+.container-importer > main > .dropzone{
+    border-radius: 6px;
+    border: 1px dashed rgba(0,0,0,.2);
+}
+
+.container-importer > main > .dropzone i{
+    font-size: 92px;
+    opacity: .2;
+}
+.container-importer > main > .dropzone label{
+    font-size: 16px;
+    margin-top: 16px;
+    opacity: .6;
+}
+.container-importer > footer{
+    display: none;
 }

@@ -17,41 +17,59 @@
         <h3>Documentation</h3>
         <p>Voici quelques liens utiles vers la documentation</p>
         <div>
-          <a href="">
+          <a href="https://github.com/WilliamsKev/netflix-categories#utiliser-lextension" target="_blank">
             <button>
               <i class="ri-bill-line"></i>
               <span>Utiliser l'extension</span>
             </button>
           </a>
-          <a href="">
+          <a href="https://github.com/WilliamsKev/netflix-categories#ajouter-des-cat%C3%A9gories-personnalis%C3%A9es" target="_blank">
             <button>
               <i class="ri-bill-line"></i>
               <span>Ajouter des catégories personnalisées</span>
             </button>
           </a>
-          <a href="">
+          <a href="https://github.com/WilliamsKev/netflix-categories#changer-les-param%C3%A8tres" target="_blank">
             <button>
               <i class="ri-bill-line"></i>
-              <span>Changer les paramètres</span>
+              <span>Changer la configuration</span>
             </button>
           </a>
-          <!--
-          <a href="">
-            <button>
-              <i class="ri-bill-line"></i>
-              <span></span>
-            </button>
-          </a>
-          -->
         </div>
       </section>
       <section>
-        <h3>Paramètres</h3>
-        <p>Changer le fond d'écran de la pop-up</p>
+        <h3>Configurations</h3>
+        <p>Importer, exporter ou réinitialiser la configuartions (lors de l'import d'une nouvelle configuration ou d'une réinitialisation, la configuration actuelle est écrasée)</p>
         <div>
+          <button id="export">
+            <i class="ri-download-2-line"></i>
+            <span>Exporter</span>
+          </button>
+          <button id="import" data-target="importer">
+            <i class="ri-login-circle-line"></i>
+            <span>Importer</span>
+          </button>
+          <button>
+            <i class="ri-refresh-line"></i>
+            <span>Réinitialiser</span>
+          </button>
         </div>
+        <div></div>
       </section>
     </main>
+    <footer>
+      <section class="wrapper-importer" data-close="true">
+        <div class="container-importer" id="importer">
+          <header></header>
+          <main></main>
+          <footer>
+            <input id="upload" type="file" accept="text/json"/>
+          </footer>
+        </div>
+      </section>
+    </footer>
+    <script src="js/Config.js"></script>
+    <script src="js/Importer.js"></script>
     <script src="options.js"></script>
   </body>
 </html>
