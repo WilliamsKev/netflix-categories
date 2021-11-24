@@ -23,24 +23,52 @@ class Importer{
     reader.readAsText(element, 'UTF-8')
     reader.onload = (event) => {
       let result = event.target.result
-      if(JSON.parse(result)) this.content = JSON.parse(result)
-      else this.error = true
+      try{
+        this.content = JSON.parse(result)
+      }catch{
+        this.error = true
+      }
+      this.reloadDOM()
     }
     reader.onerror = () => {
       this.error = true
+      this.reloadDOM()
     }
-    this.reloadDOM()
+  }
+
+  reset(){
+    this.error = false
+    this.content = null
+    document.getElementById('upload').value = null
+    this.close()
+    setTimeout(() => {
+      this.reloadDOM()
+    }, 200)
+  }
+
+  confirm(){
+    this.config.import(this.content)
+    this.reset()
   }
 
   reloadDOM(){
     if(this.error){
-
+      this.DOMElement.querySelector('main').innerHTML = `
+        <section>
+          <div>
+            <p>L'importation n'a pas pu être effectuée, fichier invalide.</p>
+          </div>
+          <div>
+            <button id="cancel">Fermer</button>
+          </div>
+        </section>
+      `
     }else{
       if(this.content){
         this.DOMElement.querySelector('main').innerHTML = `
           <section>
             <div>
-              <p>Le fichier</p>
+              <p>Le fichier a bien été importé.<br/>L'utiliser comme configuration ?</p>
             </div>
             <div>
               <button id="cancel">Annuler</button>
