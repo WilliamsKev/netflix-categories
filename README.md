@@ -1,6 +1,6 @@
 # Catégories Netflix
 
-Une extension chrome pour accéder à une série de catégories de Netflix personnalisables directement depuis le site.
+Une extension chrome pour accéder à une série de catégories de Netflix personnalisables directement depuis le site. Téléchargeable sur le [chrome web store](https://chrome.google.com/webstore/detail/cat%C3%A9gories-netflix/mnnmdmmkpnbldkcjghocbnapjefjihmf)
 
 ## Utiliser l'extension
 
